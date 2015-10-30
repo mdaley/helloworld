@@ -17,4 +17,19 @@
          response => (contains {:status 200})
          body => (contains {:name "helloworld"
                             :success true
-                            :version truthy}))))
+                            :version truthy})))
+
+ (fact "Hello reponds with name missing response when no name is supplied"
+       (let [{status :status body :body} (http/get (url+ "/hello")
+                                                   {:throw-exceptions false
+                                                    :as :json})]
+         status => 200
+         body => {:message "What is your name?"}))
+
+ (fact "Hello responds with Hello message when name is supplied"
+       (let [{status :status body :body} (http/get (url+ "/hello")
+                                                   {:throw-exceptions false
+                                                    :as :json
+                                                    :query-params {"name" "Bob"}})]
+         status => 200
+         body => {:message "Hello Bob"})))
