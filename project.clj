@@ -1,4 +1,4 @@
-(defproject helloworld "1.0.0-SNAPSHOT"
+(defproject helloworld "1.0.0"
   :description "Helloworld service"
 
   :dependencies [[ch.qos.logback/logback-classic "1.1.3"]
