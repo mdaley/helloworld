@@ -14,3 +14,4 @@ dc-sdk.log
 .lein-env
 .nrepl-port
 .lein-repl-history
+pom.xml

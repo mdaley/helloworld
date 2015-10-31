@@ -34,10 +34,11 @@
 (defn- hello
   [{:keys [query-params]}]
   (let [name (get query-params "name")]
-      {:status 200
-       :body (json/generate-string {:message (if (empty? name)
-                                               "What is your name?"
-                                               (str "Hello " (get query-params "name")))})}))
+    {:status 200
+     :body (json/generate-string
+            {:message (if (empty? name)
+                        "What is your name?"
+                        (str "Hello " name))})}))
 
 (defroutes routes
 
