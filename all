@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 exit_if_fail () {
     if [ $? -ne 0 ]
     then
